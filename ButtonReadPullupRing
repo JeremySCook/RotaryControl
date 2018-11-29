@@ -1,4 +1,5 @@
-
+#include <Wire.h>
+#include "i2cEncoderLibV2.h"
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
 #include <avr/power.h>
@@ -7,25 +8,75 @@
 #define PINRGB  4
 #define NUMPIXELSRGB  12
 
+i2cEncoderLibV2 Encoder(0x00);
+const int IntPin = A2; // Definition of the interrupt pin on PICO
+
 Adafruit_NeoPixel pixelsRGB = Adafruit_NeoPixel(NUMPIXELSRGB, PINRGB, NEO_RGB + NEO_KHZ800);
+
+#include "Keyboard.h"
+#include "Mouse.h"
 
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
   pinMode(A0, INPUT_PULLUP);
   pinMode(A1, INPUT_PULLUP);
+  pinMode(IntPin, INPUT); //sets A2 as int pin in this case
   pixelsRGB.begin(); // This initializes the NeoPixel library as pixelsRGB object.
+
+//setup for encoder
+  Encoder.begin(INT_DATA | WRAP_DISABLE | DIRE_LEFT | IPUP_ENABLE | RMOD_X1 | STD_ENCODER);
+  Encoder.writeCounter((int32_t)0); /* Reset the counter value */
+  Encoder.writeMax((int32_t)10); /* Set the maximum threshold*/
+  Encoder.writeMin((int32_t) - 10); /* Set the minimum threshold */
+  Encoder.writeStep((int32_t)1); /* Set the step to 1*/
+  Encoder.writeInterruptConfig(0xff); /* Enable all the interrupt */
+  Encoder.writeAntibouncingPeriod(20);  /* Set an anti-bouncing of 200ms */
+  Encoder.writeDoublePushPeriod(50);  /*Set a period for the double push of 500ms */
+
+//setup keyboard and mouse input
+Mouse.begin();
+Keyboard.begin();
+
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-  // read the input on analog pin 0:
+  // read the input on analog pins for button input:
   int sensorValue = digitalRead(A0);
   int sensorValue1 = digitalRead(A1);
+  // read encoder input
+  uint8_t enc_cnt;
+  if (digitalRead(IntPin) == LOW) {
+    if (Encoder.updateStatus()) {
+      if (Encoder.readStatus(RINC)) {
+        Serial.print("Increment: ");
+        Serial.println(Encoder.readCounterByte());
+        delay(100);
+      }
+    if (Encoder.readStatus(RDEC)) {
+        Serial.print("Decrement: ");
+        Serial.println(Encoder.readCounterByte());
+        delay(100);
+      }
+    if (Encoder.readStatus(PUSHR)) {
+        Serial.println("Push button Released");
+        delay(100);        
+      }
+
+    if (Encoder.readStatus(PUSHP)) {
+        Serial.println("Push button Pressed");
+        delay(100); 
+      }
+    }
+  }
   for(int x = 0; x <12; x++){
   pixelsRGB.setPixelColor(x, pixelsRGB.Color(10,0,0)); // Red *red/green may be reversed depending on your strip
   }
   pixelsRGB.show(); // This sends the updated pixel color to the hardware.
+  if (sensorValue == 0){
+    Mouse.move(0,40);
+  }
   // print out the value you read:
   Serial.println(sensorValue);
   Serial.println(sensorValue1);
