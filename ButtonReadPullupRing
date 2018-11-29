@@ -1,0 +1,33 @@
+
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+#include <avr/power.h>
+#endif
+
+#define PINRGB  4
+#define NUMPIXELSRGB  12
+
+Adafruit_NeoPixel pixelsRGB = Adafruit_NeoPixel(NUMPIXELSRGB, PINRGB, NEO_RGB + NEO_KHZ800);
+
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(A0, INPUT_PULLUP);
+  pinMode(A1, INPUT_PULLUP);
+  pixelsRGB.begin(); // This initializes the NeoPixel library as pixelsRGB object.
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input on analog pin 0:
+  int sensorValue = digitalRead(A0);
+  int sensorValue1 = digitalRead(A1);
+  for(int x = 0; x <12; x++){
+  pixelsRGB.setPixelColor(x, pixelsRGB.Color(10,0,0)); // Red *red/green may be reversed depending on your strip
+  }
+  pixelsRGB.show(); // This sends the updated pixel color to the hardware.
+  // print out the value you read:
+  Serial.println(sensorValue);
+  Serial.println(sensorValue1);
+  delay(10);        // delay in between reads for stability
+}
