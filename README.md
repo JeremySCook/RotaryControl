@@ -1,6 +1,8 @@
 # RotaryControl
 Rotary control with PICO and I2C encoder.
 
+Build video: https://www.youtube.com/watch?v=ePKGLnjlXl4
+
 Note that i2cEncoderLibV2.cpp and i2cEncoderLibV2.h will be needed in the same directory.
 
 Purchased Electronics Needed:
