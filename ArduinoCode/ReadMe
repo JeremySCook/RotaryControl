@@ -1,1 +1,4 @@
 Arduino Code including Encoder Libraries that will need to be placed in same directory as main code
+
+Rotary-shortcut-1-capslock.ino adds functionality for ring to light up blue when caps lock key is on.
+Could expand this functionality, but gives a better indication of this being on than most keyboards.
