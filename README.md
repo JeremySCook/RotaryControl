@@ -23,4 +23,4 @@ Pushbuttons
 
 Wire
 
-This post was helpful to figured out how to use the caps lock functionality: https://www.instructables.com/id/USB-Volume-Control-and-Caps-Lock-LED-Simple-Cheap-/
+This post was helpful to figure out how to use the caps lock functionality: https://www.instructables.com/id/USB-Volume-Control-and-Caps-Lock-LED-Simple-Cheap-/
