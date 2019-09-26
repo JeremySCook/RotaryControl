@@ -63,9 +63,19 @@ if (BootKeyboard.getLeds() & LED_CAPS_LOCK){
   pixelsRGB.show(); // This sends the updated pixel color to the hardware.
 }
 
-//lights loop in both modes ===============================================================
+//scroll lock code =======================================================================
 
-else {
+else if (BootKeyboard.getLeds() & LED_SCROLL_LOCK){
+  Serial.println("capsLock");
+  for(int x = 0; x <12; x++){
+  pixelsRGB.setPixelColor(x, pixelsRGB.Color(10,0,0)); 
+  }
+  pixelsRGB.show(); // This sends the updated pixel color to the hardware.
+}
+
+//acts normally if num lock is on and other locks off ===================================
+
+else if (BootKeyboard.getLeds() & LED_NUM_LOCK) {
   int pixelNumber = map(Encoder.readCounterByte(), 0, 19, 0, 11);
   for(int x = 0; x <12; x++){
   pixelsRGB.setPixelColor(x, pixelsRGB.Color(0,0,0)); // Red *red/green may be reversed depending on your strip
@@ -75,6 +85,16 @@ else {
   if (pixelNumber == 11) pixelsRGB.setPixelColor(0, pixelsRGB.Color(0,10,0));
   if (pixelNumber != 0) pixelsRGB.setPixelColor(pixelNumber - 1, pixelsRGB.Color(0, 10, 0));
   if (pixelNumber == 0) pixelsRGB.setPixelColor(11, pixelsRGB.Color(0, 10, 0));  
+  pixelsRGB.show(); // This sends the updated pixel color to the hardware.
+}
+
+//lights up leds red if no num lock ===============================================================
+
+else {
+  Serial.println("no num lock");
+  for(int x = 0; x <12; x++){
+  pixelsRGB.setPixelColor(x, pixelsRGB.Color(0,10,0)); 
+  }
   pixelsRGB.show(); // This sends the updated pixel color to the hardware.
 }
 
