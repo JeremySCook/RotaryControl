@@ -24,3 +24,5 @@ Pushbuttons
 Wire
 
 This post was helpful to figure out how to use the caps lock functionality: https://www.instructables.com/id/USB-Volume-Control-and-Caps-Lock-LED-Simple-Cheap-/
+
+Code referenced in [Arrow Encoder article](https://www.arrow.com/en/research-and-events/articles/rotary-encoders-how-to-pair-with-an-arduino-board): https://github.com/JeremySCook/ArduinoEncoder
