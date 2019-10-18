@@ -1,4 +1,8 @@
 Arduino Code including Encoder Libraries that will need to be placed in same directory as main code
 
 Rotary-shortcut-1-capslock.ino adds functionality for ring to light up blue when caps lock key is on.
-Could expand this functionality, but gives a better indication of this being on than most keyboards.
+
+Rotary-shortcut-3-locks-jog.ino gives an indication of caps lock, scroll lock, and num lock.
+Does away with game functionality as shown in the demo video, but replaces it with a "jog" function
+that adjusts volume up and down intermittently to keep computer awake (in case your power management is
+acting screwy).
