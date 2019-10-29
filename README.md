@@ -1,5 +1,5 @@
 # RotaryControl
-![image](rotary-caps.jpg)
+![image](shortcut.jpg)
 
 Rotary control with PICO and I2C encoder.
 
