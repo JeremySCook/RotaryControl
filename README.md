@@ -1,7 +1,9 @@
 # RotaryControl
 ![image](shortcut.jpg)
 
-### Build videos: https://www.youtube.com/playlist?list=PLUSVaS5vtdgQBRD3hqpD_LZi0aTD-GRQe
+### Build videos
+
+https://www.youtube.com/playlist?list=PLUSVaS5vtdgQBRD3hqpD_LZi0aTD-GRQe
 
 ### Purchased Electronics Needed
 
