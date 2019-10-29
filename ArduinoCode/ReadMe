@@ -1,4 +1,4 @@
-Arduino Code including two i2c Libraries ((i2cEncoderLibV2.cpp and i2cEncoderLibV2.h) \
+Arduino Code including two i2c Libraries ((i2cEncoderLibV2.cpp and i2cEncoderLibV2.h)\
 that need to be placed in same directory as main code.
 
 Rotary-shortcut-1-capslock.ino adds functionality for ring to light up blue when caps lock key is on.
