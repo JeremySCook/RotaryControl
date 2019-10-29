@@ -12,6 +12,7 @@ I2C Rotary Encoder: https://www.tindie.com/products/Saimon/i2cencoder-v2-connect
 MellBell PICO: https://mellbell.cc/products/pico \
 NeoPixel Ring: https://www.adafruit.com/product/1643 \
 Rotary Encoder \
+Encoder knob: https://www.ebay.com/itm/K9-0-25-Dia-Black-Aluminum-Rotary-Control-Potentiometer-Knob-25mm-x-15mm/253315168134 \
 Pushbuttons \
 Wire
 
