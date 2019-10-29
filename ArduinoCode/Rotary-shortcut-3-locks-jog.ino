@@ -197,8 +197,9 @@ void game() {
   pixelsRGB.show(); // This sends the updated pixel color to the hardware.
   if(currentMillis - previousMillis1 > jogTime){
   //works well now, could change it to toggle scroll lock on and off to make it even less interesting??
-    Consumer.write(MEDIA_VOLUME_UP);
-    Consumer.write(MEDIA_VOLUME_DOWN);
+    BootKeyboard.write(KEY_SCROLL_LOCK);
+    delay(10);
+    BootKeyboard.write(KEY_SCROLL_LOCK);
     previousMillis1 = millis();
   }
 }
