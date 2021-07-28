@@ -1,4 +1,9 @@
 # RotaryControl
+
+### New Version:
+
+PCB-based [JC Pro Macro](https://github.com/JeremySCook/JC-Pro-Macro) with enhanced features.
+
 ![image](shortcut.jpg)
 
 ### Build videos
