@@ -35,3 +35,5 @@ Plasti Dip Spray https://amzn.to/34lU22f (Amazon Affiliate - not sure if this is
 
 This post was helpful to figure out how to use the caps lock functionality: https://www.instructables.com/id/USB-Volume-Control-and-Caps-Lock-LED-Simple-Cheap-/ \
 Code referenced in [Arrow Encoder article](https://www.arrow.com/en/research-and-events/articles/rotary-encoders-how-to-pair-with-an-arduino-board): https://github.com/JeremySCook/ArduinoEncoder
+
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCrCbscxHLiaauK4H478ArRQ) [![Twitter URL](https://img.shields.io/twitter/follow/jeremyscook?style=flat-square&logo=twitter)](https://twitter.com/jeremyscook)
