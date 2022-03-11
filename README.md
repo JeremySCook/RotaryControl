@@ -1,8 +1,10 @@
 # RotaryControl
 
-### New Version:
-
-PCB-based [JC Pro Macro](https://github.com/JeremySCook/JC-Pro-Macro) with enhanced features.
+*
+*
+### New Version: Enhanced [JC Pro Macro 2](https://www.tindie.com/products/jeremycook/jc-pro-macro-2-rotarygpio-macro-keyboard-kit/) for sale on Tindie with all kinds of fun features.
+*
+*
 
 ![image](shortcut.jpg)
 
